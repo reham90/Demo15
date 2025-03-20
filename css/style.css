@@ -280,7 +280,7 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 17px;
+	gap: 25px;
 	margin: 0;
 	padding: 0;
 }
@@ -1064,12 +1064,10 @@ a:focus {
 
 @media (max-width: 991px) {
 	body {
-		padding-top: 169px;
+		padding-top: 150px;
 	}
 
-	html[dir="rtl"] body {
-		padding-top: 189px;
-	}
+	
 
 	.footer-note {
 		margin-bottom: 30px;
@@ -1088,9 +1086,14 @@ a:focus {
 	}
 
 	.features-bar-content {
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 3px 30px;
+		justify-content: flex-start;
+		animation: features 8s linear infinite;
+		
+		gap: 30px;
+	}
+	html[dir="rtl"] .features-bar-content{
+		animation-direction: reverse;
+		justify-content: flex-end;
 	}
 
 	.features-bar {
@@ -1190,12 +1193,10 @@ a:focus {
 	.top-header {
 		position: relative;
 		background-color: #fff;
-		min-height: 169px;
+		min-height: 150px;
 	}
 
-	html[dir="ltr"] .top-header {
-		min-height: 189px;
-	}
+
 
 	.fixed-header .top-header {
 		min-height: 118px !important;
@@ -1441,10 +1442,20 @@ a:focus {
 		width: 100%;
 		position: relative;
 		transition: 0.5s;
-		font-family: "alfont_com_AlFont_com_Frutiger-LT-Arabic-75-Black";
+		font-family: "Frutiger LT Arabic 65 Bold";
 		color: var(--main-color);
 	}
-
+	@keyframes features {
+		0% {
+		  transform: translate(0, 0);
+		}
+		100% {
+		  transform: translate(-100%, 0);
+		}
+	  }
+	  .features-note{
+		white-space: nowrap;
+	  }
 	.big-menu li {
 		padding: 0;
 	}
